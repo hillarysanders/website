@@ -1,0 +1,31 @@
+{
+  "name": "hillarysanders.com",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/hillarysanders/website",
+  "authors": [
+    "Hillary Sanders <hillosand@gmail.com>"
+  ],
+  "description": "Hillary Sanders' personal website",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "Hillary",
+    "Sanders",
+    "data",
+    "scientist",
+    "art",
+    "statistics",
+    "programming",
+    "R"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
