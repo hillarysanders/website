@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title> 
+            Hillary Sanders
+        </title> 
+        <meta name="author" content="Hillary Sanders"> 
+        <meta name="keywords" content="Hillary Sanders Statistics Berkeley Premise Data Scientist Art Bayesian Painting"> 
+        <meta name="description" content="Hillary Sanders: Data Scientist?"> 
+        <meta name="robots" content="index, follow, noarchive"> 
+
+      <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+      <link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+      <script type="text/javascript" src="src/d3.v2.js"></script>
+      <style>
+         .midwrap {
+            min-height: 2700px;
+         }
+      </style> 
+   </head>
+
+   <body>
+
+
+
+      
+      <div class="midwrap-transparent">
+         <div class="header codex basic"><h1>hillary sanders</h1></div> 
+
+         <div class="navbox">
+            <ul class="navlist">
+               <a href="index.html"><li class="navitem basic">about hillz</li></a>
+               <a href="drawings.html"><li class="navitem basic">drawings</li></a>
+               <a href="paintings.html"><li class="navitem basic">paintings</li></a>
+               <a href="mixed-media.html"><li class="navitem basic">mixed media</li></a>
+               <a href="cheatsheets.html"><li class="navitem basic breadcrumb">cheatsheets</li></a>
+               <a href="code.html"><li class="navitem basic">code</li></a>
+               <a href="graphs.html"><li class="navitem basic">graphs</li></a>
+               <a href="resume.html"><li class="navitem basic">resume</li></a>
+            </ul>
+         </div>
+
+        <div class="navbox navbox">
+            <ul class="navlist-mini">
+               <a href="emacs.html"><li class="navitem-mini basic">Emacs</li></a>
+               <a href="python.html"><li class="navitem-mini basic">Python</li></a>
+               <a href="scala.html"><li class="navitem-mini basic">Scala</li></a>
+               <a href="latex.html"><li class="navitem-mini basic">LaTeX</li></a>
+               <a href="UNIX.html"><li class="navitem-mini basic">UNIX</li></a>
+               <a href="d3.html"><li class="navitem-mini basic breadcrumb">d3</li></a>
+               <a href="probability_theory.html"><li class="navitem-mini basic">Probability</li></a>
+               <a href="bayesian_analysis.html"><li class="navitem-mini basic">Bayesian Stats</li></a>
+            </ul>
+        </div>
+
+      </div>
+            <!-- Main content -->
+        <div class="midwrap light">
+
+          <div class='hills-first-plot'></div>
+
+        <div class="onecol">
+          <h2>US BLS Data</h2>
+          <br><br><br><br>
+        </div>
+
+
+
+
+
+         <div class="threecol thick">
+          <div class='svg-example'></div>  
+          <br>
+          <div class='svg-bar-chart'></div>
+         </div>
+
+         <div class="threecol thick">
+         </div>
+
+
+         <div class="threecol thick">
+         </div>   
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+  <script type="text/javascript"> 
+
+
+    // var data = d3.csv('gov-cdc/data/Mortality Data - CDC.csv', 
+    //     .row(function(d) { return {key: d.key, value: +d.value}; })
+    //     .get(function(error, rows) { console.log(rows); });
+
+    d3.csv("gov-cdc/data/Mortality Data - CDC.csv", function(data) {
+
+      // reads in data as data
+      console.log('Hello');
+      console.log(data[0].age_group);
+
+      // return {
+      //   age_group: d.age_group, // convert "Year" column to Date
+      //   icd_chapter: d.icd_chapter,
+      //   injury_intent: d.injury_intent,
+      //   race: d.race,
+      //   gender: d.gender,
+      //   deaths: d.deaths,
+      //   population: d.population,
+      //   crude_rate: d.crude_rate,
+      //   x_of_total_deaths: d.x_of_total_deaths
+      // };
+
+      // data is an array of 2433 objects.
+      
+      // Chose parameters:
+      var gender = 'Female'
+      var race = 'White'
+
+      // create a boolean variable that will be used to subset out unwanted data:
+      for(i=0; i<data.length; i++) { 
+        keep = data[i].gender==gender & data[i].race == race
+        data[i].idx = keep
+      }
+      // subset out unwanted data:
+      console.log('length before subsetting: ' + data.length)
+      var data = data.filter(function(d){ return d.idx })
+      console.log('length after subsetting: ' + data.length)
+
+      // clean out rows with blank ages and death intents:
+      var data = data.filter(function(d){ return d.age_group!= ''})
+      var data = data.filter(function(d){ return d.injury_intent!= ''})
+      console.log('length after removal of blank values: ', data.length)
+
+      ///////// get unique ages and injury intents, etc.
+      // var ages = d3.set(d[1].age_group).values();
+
+
+
+      var margin = 20
+      var w = 1000-40
+      var h = 350
+      var max_rate = d3.max(data, function(d) { return +d.crude_rate;} );
+      console.log('max crude rate is: ', max_rate)
+      var yScale = d3.scale.linear()
+      yScale.domain([0, max_rate]).range([0, h]);
+                      .domain([0,max_rate])
+                      .range([0, h]);
+
+      d3.select('.hills-first-plot')
+        .append("svg")
+        .style('background-color', '#7090b0')
+        .attr("width", w)
+        .attr("height", h)
+        .style('margin', margin+'px');
+
+
+    // end of CSV data function
+    }, function(error, rows) {
+      console.log('fail');
+    });
+
+
+
+
+
+    // Your D3 code goes here! :) 
+    var dataset = [15, 20, 25, 30, 35] // create your dataset
+    d3.select('.bar-example') // selects the element (in my case, div) that has class ('bar-example'). '#foo' selects elements with ID 'foo', and 'div' would select the first <div></div> in my HTML document.
+      .selectAll('p') //  Selects all <p> elements in the DOM. Since none exist yet, this returns an empty selection. Think of this empty selection as representing the paragraphs that will soon exist.
+      .data(dataset) // There are five values in our data set, so everything past this point is executed five times, once for each value.
+      .enter() // To create new, data-bound elements, you must use enter(). This method looks at the DOM, and then at the data being handed to it. If there are more data values than corresponding DOM elements, then enter() creates a new placeholder element on which you may work your magic. It then hands off a reference to this new placeholder to the next step in the chain.
+      .append('p') // Takes the placeholder selection created by enter() and inserts a p element into the DOM.
+      .style('color', 'steelblue') // alters the style of your selected <p> elements
+      .style('margin', '5px')
+      .style('background-color', 'goldenrod')
+      .style('height', function(d){ return d+'px';}) // d, the first paramater in a function you make, is always the data. The second paramater (usually i) is the index of your data. 
+      .style('width', function(d){ return d*4+'px';})
+      .text(function(d){ return '<p> #' + d;});
+
+
+
+
+      // SVGs
+      //Width and height
+      var w = 300;
+      var h = 75;
+      var dataset = [ 5, 10, 15, 20, 25 ];
+
+      var svg = d3.select(".svg-example")
+            .append("svg")
+            .style('background-color', 'steelblue')
+            .attr("width", w)
+            .attr("height", h);
+
+
+      var circles = svg.selectAll("circle")
+                 .data(dataset)
+                 .enter()
+                 .append("circle");
+
+
+      circles.attr("cx", function(d, i) {
+            return (i * 60) + 20;
+        })
+      .attr("fill", "yellow")
+      .attr("stroke", "red")
+      .attr('opacity', '.5')
+      .attr("stroke-width", "10px")
+       .attr("cy", h/2)
+       .attr("r", function(d) {
+            return d;
+       });
+
+
+
+
+
+
+      // SVG bar chart with padding
+      //////////////////////////////////////////////////
+      // PARAMETERS:
+      var dataset = [ 11, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+      var data_max = 25
+      var w = 300;
+      var h = 200;
+      var padding = 4;
+      var pad_bottom = 10;
+      var pad_top = 50;
+      var pad_left = 10;
+      var pad_right = 10;
+      var text_down = .04;
+      var title_down = .15;
+      var title = "SVG Bar Graph with Padding";
+      //////////////////////////////////////////////////
+      // Code:
+      var svg = d3.select(".svg-bar-chart")
+            .append("svg")
+            .style('background-color', '#909099')
+            .attr("width", w)
+            .attr("height", h);
+
+      svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", function(d, i) {
+            return (pad_left + (i) * (w-pad_right-pad_left+padding) / (dataset.length));
+        })
+       .attr("y", function(d) { return h-((h-pad_top-pad_bottom)*(d/data_max))-pad_bottom})
+       .attr("width", function(d, i){ return (w / dataset.length)-padding})
+       .attr("height", function(d){ return (h-pad_top-pad_bottom)*(d/data_max)})
+       .attr("fill", function(d) {
+            return "rgb(20, 60, " + (Math.round((d/data_max) * 255)) + ")";
+        });
+
+      svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .attr("x", function(d, i) {
+            return (pad_left + (i) * (w-pad_right-pad_left+padding) / (dataset.length));
+        })
+       .attr("y", function(d) { return h-((h-pad_top-pad_bottom)*(d/data_max))-pad_bottom+h*text_down})
+       .text(function(d) {
+            return d;
+       })
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "9px")
+       .attr("fill", "white");
+
+       svg.append("text")
+        .attr("x", (w / 2))             
+        .attr("y", h*title_down)
+        .attr("text-anchor", "middle")  
+        .attr("font-family", "sans-serif")
+        .style("font-size", "19px") 
+        .text(title);
+       //////////////////////////////////////////////////
+
+
+
+
+      </script>
+ 
+
+
+
+</body> </html>
+
+
+

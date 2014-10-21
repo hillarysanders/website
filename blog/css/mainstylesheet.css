@@ -1,0 +1,117 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0px;
+/*	background-color: pink;
+	opacity: .4;*/
+}
+
+@font-face {
+	font-family: PC;
+	src: url("PrintClearly.otf") format("opentype");
+}
+
+@font-face {
+	font-family: PCbold;
+	src: url("PrintBold.otf") format("opentype");
+}
+
+h1 {
+	font-family: "PCbold", sans-serif;
+	font-size: 3.3vw;
+	color: white;
+	background-color: rgba(0, 0, 0, .9);
+	padding-left: .5vw; 
+	margin-bottom: .5vw;
+
+}
+
+h2 {
+	font-family: "PC", sans-serif;
+	font-size: 1.5vw;
+	padding: 0vw 0vw 0vw .3vw;
+}
+
+
+
+.margins {
+	/*This is to take care of the inline-block default spacing problem: (a space is added = 4px)*/
+	margin-right: -4px; 
+	margin-left: 1vw;
+	/*HACK TO REMOVE MYSTERY 2PX BOTTOM MARGINS*/
+	margin-top: calc(1vw - 2px);
+}
+
+.inner_box {
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	background-color: #eee;
+	z-index: 10;
+}
+
+
+.onehi_onewi {
+	position: relative;
+	display: inline-block;
+	width: 23.75vw;
+	height: calc( 23.75vw * (2000 / 3008) );
+	/*float: left;*/
+}
+
+.twohi_onewi {
+	position: absolute;
+	display: inline-block;
+	width: 23.75vw;
+	height: calc( (47.5vw * (2000 / 3008)) + 1vw );
+}
+
+
+.onehi_twowi {
+	/*float: left;*/
+	position: relative;
+	display: inline-block;
+	width: 48.5vw;
+	height: calc( 23.75vw * (2000 / 3008) );
+}
+
+.twohi_twowi {
+	position: absolute;
+	display: inline-block;
+	width: 48.5vw;
+	height: calc( (47.5vw * (2000 / 3008)) + 1vw );
+	/*opacity: .5;*/
+}
+
+/*the margins aren't two by three, so when you add a margin to the height.... */
+
+.twohi_onewi {
+	position: absolute;
+	display: inline-block;
+	width: 23.75vw;
+	height: calc( (47.5vw * (2000 / 3008)) + 1vw );
+}
+
+
+.fourhi_fourwi {
+	position: absolute;
+	display: inline-block;
+	width: 98vw;
+	height: calc( (95vw * (2000 / 3008)) + 3vw );
+}
+
+.twohi_fourwi {
+	position: absolute;
+	display: inline-block;
+	width: 98vw;
+	height: calc( (47.5vw * (2000 / 3008)) + 1vw );
+}
+
+
+
+
+
+

@@ -1,0 +1,764 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title> 
+            Hillary Sanders
+        </title> 
+        <meta name="author" content="Hillary Sanders"> 
+        <meta name="keywords" content="Hillary Sanders Statistics Berkeley Premise Data Scientist Art Bayesian Painting"> 
+        <meta name="description" content="Hillary Sanders: Data Scientist?"> 
+        <meta name="robots" content="index, follow, noarchive"> 
+
+      <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+      <link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+      <script type="text/javascript" src="src/d3.v2.js"></script> 
+      <style>
+         .midwrap {
+            min-height: 3400px;
+         }
+      </style> 
+   </head>
+
+   <body>
+
+
+
+      
+      <div class="midwrap-transparent">
+         <div class="header codex basic"><h1>hillary sanders</h1></div> 
+
+         <div class="navbox">
+            <ul class="navlist">
+               <a href="index.html"><li class="navitem basic">about hillz</li></a>
+               <a href="drawings.html"><li class="navitem basic">drawings</li></a>
+               <a href="paintings.html"><li class="navitem basic">paintings</li></a>
+               <a href="mixed-media.html"><li class="navitem basic">mixed media</li></a>
+               <a href="cheatsheets.html"><li class="navitem basic breadcrumb">cheatsheets</li></a>
+               <a href="code.html"><li class="navitem basic">code</li></a>
+               <a href="graphs.html"><li class="navitem basic">graphs</li></a>
+               <a href="resume.html"><li class="navitem basic">resume</li></a>
+            </ul>
+         </div>
+
+        <div class="navbox navbox">
+            <ul class="navlist-mini">
+               <a href="emacs.html"><li class="navitem-mini basic">Emacs</li></a>
+               <a href="python.html"><li class="navitem-mini basic">Python</li></a>
+               <a href="scala.html"><li class="navitem-mini basic">Scala</li></a>
+               <a href="latex.html"><li class="navitem-mini basic">LaTeX</li></a>
+               <a href="UNIX.html"><li class="navitem-mini basic">UNIX</li></a>
+               <a href="d3.html"><li class="navitem-mini basic breadcrumb">d3</li></a>
+               <a href="probability_theory.html"><li class="navitem-mini basic">Probability</li></a>
+               <a href="bayesian_analysis.html"><li class="navitem-mini basic">Bayesian Stats</li></a>
+            </ul>
+        </div>
+
+      </div>
+            <!-- Main content -->
+        <div class="midwrap light">
+
+
+        <div class="onecol">
+          <h2><b>D3 (Javascript Library)</b></h2>
+
+
+          D3 is probably the most famous graphing library in javascript. What's great about visualizing data in javascript is that you can make interactive, dynamic graphs that run in a web browser. Pretty sweet. <a href="http://www.w3schools.com/html/html_tables.asp"> Jerome Cukier's d3 cheatsheet</a> is simply awesome, but this is a recap of the even basic-er basics, much of which is based off of alignedleft's tutorials.
+        </div>
+
+
+
+         <div class="threecol thick">
+          <h2>Where to put your D3 code</h2>
+
+
+          <code>
+          &lt;!DOCTYPE html&gt; <br>
+          <green>&lt;html lang="en"&gt; </green><br>
+          &nbsp; <purple> &lt;head&gt; </purple><br>
+          &nbsp; <grey>// src = path to the d3.js source code: </grey> <br>
+          &nbsp;&nbsp;    &lt;script type="text/javascript" src="d3.v2.js"&gt;&lt;/script&gt; <br>
+          &nbsp; <purple> &lt;/head&gt;</purple> <br>
+          &nbsp; <blue> &lt;body&gt; </blue><br>
+          &nbsp;&nbsp;    &lt;script type="text/javascript"&gt; <br>
+          &nbsp;&nbsp;&nbsp;    <red>// Your D3 code goes here! :) </red> <br>
+          &nbsp;&nbsp;&nbsp;    &lt;/script&gt; <br>
+          &nbsp; <blue> &lt;/body&gt; </blue><br>
+          <green>&lt;/html&gt;</green> <br>
+          </code>
+          <br>
+
+          Okay, so you have an HTML page. And you have d3. D3 allows us to create HTML elements (e.g. divs, tables, etc...), select them, modify there CSS attributes, and delete them (among other things).
+
+          <h2>Selections</h2>
+          Say we want to select the body of our HTML page:
+
+          <br><br>
+          <code>var selection = d3.select("body");</code>
+          <br><br>
+
+          Now the object <code>selection</code> exists, and it is the body element of our HTML page. Specifically, it is an array of length 1 that contains another array of length 1, which contains the body of our HTML page. So if you open up your console for your HTML page, and type in <code>selection[0]</code>, the result will be something like <code>[&lt;body&gt;…​&lt;/body&gt;]</code>, but if you type <code>selection[0][0]</code>, you'll get <code>&lt;body&gt;…​&lt;/body&gt;​</code> (note the deleted brackets), i.e. the actual <code>&lt;body&gt;</code> object instead of an array containing the <code>&lt;body&gt;</code> object.
+<br><br>
+          Why is the <code>body</code> object enclosed in two arrays? Consistency! Which is lovely for us programmers. If you're selecting many objects, e.g. three paragraph elements, then you'll be able to access those three paragraphs via <code>selection[0][0]</code>, <code>selection[0][1]</code>, and <code>selection[0][2]</code>. Further, if you're selecting many things that each contain many other things, the same format will be used and work. For example, if you're selecting elements in a table, row 4, column 3 will end up being <code>selection[3][2]</code>. 
+<br><br>
+          To select these fancier things though, you have to use different commands. <b><code>d3.select</code></b> selects only one element, so the object you're selecting will always be contained in two arrays, i.e. <code>selection[0][0]</code>. To select multiple elements, like multiple <code>&lt;div&gt;</code>s, you use <b><code>d3.selectAll</code></b>. Using <code>var selection = d3.selectAll('div')</code> will put all of your HTML page's <code>&lt;div&gt;</code> elements into <code>selection[0]</code>. So <code>selection[0][0]</code> will be the first <code>&lt;div&gt;</code> in your HTML page, <code>selection[0][1]</code> the second, and so on and so forth.
+<br><br>
+          To select multiple groups of multiple elements, you must use <b><code>d3.selectAll</code></b> twice. Say you have a <a href="http://www.w3schools.com/html/html_tables.asp"> table</a> made up of a few <code>&lt;tr&gt;</code> rows which each contain a few nested <code>&lt;td&gt;</code> values (one td per column). Using:
+
+<br><br>
+          <code>var selection = d3.selectAll('tr').selectAll('td')</code>
+<br><br>
+          will first select all <code>&lt;tr&gt;</code> elements, and then selects all <code>&lt;td&gt;</code> elements within each <code>&lt;tr&gt;</code> element. So <code>selection[0][5]</code> will give you the value in the first row and sixth column. 
+          <br><br>
+          To re-iterate: when using <code>selectAll</code> on another selection, every element in the first selection becomes a group in the new selection, where <code>selection[i]</code> is the <col>i</col>th group in a selection, and <code>selection[i][j]</code> is the <code>j</code>th element in the <code>i</code>th group in the selection. So if you type:
+<br><br>
+          <code>var selection = d3.selectAll("tr").selectAll("td").selectAll("span");</code>
+<br><br>
+          Then <code>selection[0]</code> will be your first <code>&lt;td&gt;</code> element (the <code>tr</code> information is lost), and selection[0][0] will be the first <code>&lt;span&gt;</code> element within your first <code>&lt;td&gt;</code> element.
+<br><br>
+
+
+
+
+        
+
+
+          <h2>Adding HTML Elements with D3</h2>
+          Say we want to add a paragraph to the body of our HTML page that says 'Booyah'. Instead of adding it to your HTML code with 
+          <code><code>&lt;p&gt;</code>Booyah<code>&lt;/p&gt;</code></code>, we can use d3:
+          <br><br>
+          <code>
+            d3.select("body")
+            <br>&nbsp;&nbsp;.append("p")
+            <br>&nbsp;&nbsp;.text("Booyah");
+          </code>
+          <br>
+          <br>
+          This is equivalent to, but more readable than:
+          <br><br>
+          <code>
+          var body = d3.select("body");<br>
+          var p = body.append("p");<br>
+          p.text("New paragraph!");<br>
+          </code> 
+
+
+
+        <h2>Modifying Attributes of your HTML Page Selections</h2>
+        <code>
+          var section = d3.selectAll("section")<br>
+          &nbsp;&nbsp;.style("background-color", 'pink')<br>
+          &nbsp;&nbsp;.style('color', 'darkgreen')<br>
+          &nbsp;&nbsp;.style('height', '70px');
+         </code>
+
+
+         <h2>Data Objects</h2>
+          <li>Array of numbers:</li>
+          <code>var numbers = [4, 5, 18, 23, 42];</code>
+          <li>Array of objects:</li>
+          <code>
+            var letters = [<br>
+              &nbsp;{name: "A", frequency: .08167},<br>
+              &nbsp;{name: "B", frequency: .01492},<br>
+              &nbsp;{name: "E", frequency: .12702}<br>
+            ];
+            </code> 
+            <li>Array of Arrays:</li>
+            <code>
+              var matrix = [<br>
+               &nbsp; [ 0,  1,  2,  3],<br>
+               &nbsp; [ 4,  5,  6,  7],<br>
+               &nbsp; [12, 13, 14, 15]<br>
+              ];
+            </code>
+            <br><br>
+            Create some random data:
+            <br><br>
+            <code>
+              var dataset = [];                     <grey>   //Initialize empty array</grey>
+              for (var i = 0; i < 25; i++) {         <grey>  //Loop 25 times</grey>
+                  var newNumber = Math.random() * 30;  
+                  dataset.push(newNumber);             <grey>//Add new number to array</grey>
+              }
+            </code>
+
+
+         </div>
+
+
+
+
+
+
+
+
+         <div class="threecol thick">
+
+
+            <h2>Binding Data to HTML Elements</h2>
+          Okay, so say you want to make and set the width of a bunch of different <code>&lt;div&gt;</code>s. You can do this by creating an array of widths, assinging that data to your divs, and then setting the divs widths to be a function of each <code>&lt;div&gt;</code>'s data property.
+          <br><br>
+          Here's an example that will do just that, among some other cool things:
+          <br><br>
+          <code>
+            <grey>// create your dataset: <br></grey>
+            var dataset = [15, 20, 25, 30, 35] <br>
+           
+            <grey>// select the element (in my case, div) <br>
+              // that has class ('bar-example'): </grey> <br>
+            <grey> // '#foo' would select the first element <br>
+              // with ID 'foo', and 'div' would select <br> 
+              // the first &lt;div&gt; element.</grey> <br>
+            d3.select('.bar-example') <br>
+
+            <grey>//  Select all &lt;p&gt; elements in the DOM. <br> 
+              //Since none exist yet, this returns an <br>
+              // empty selection. <br>
+            // Think of this empty selection as <br> 
+            // representing the paragraphs that will <br>
+            // soon exist. </grey><br>
+            .selectAll('p') <br>
+          
+            <grey>// There are five values in our dataset, <br>
+             // so everything past this point is <br> 
+             // executed five times, once for each <br>
+             // value. <br></grey>
+            .data(dataset) <br>
+            <grey>// To create new, data-bound elements, <br>
+            // you must use enter(). <br>
+            // .enter() looks at the DOM, and then at <br>
+            // the data being handed to it.  <br>
+            // If there are more data values than <br> 
+            // corresponding DOM elements, then <br> 
+            // enter() creates a new placeholder <br>
+            // element on which you may work your <br>
+            // magic. It then hands off a reference  <br>
+            // to this new placeholder to the next <br>
+            // step in the chain. <br>
+            </grey>
+            .enter() <br>
+            <grey> // .append takes the placeholder <br>
+             // selection created by enter() and  <br> 
+             // inserts a &lt;p&gt; element into the DOM: <br> </grey> 
+            .append('p')  <br>
+            <grey> // alter the color of your selected &lt;p&gt; <br> // elements <br> </grey>
+            .style('color', 'steelblue') <br>
+            <grey> // give the &lt;p&gt; elements margins of 5 px: <br> </grey>
+            .style('margin', '5px') <br>
+            <grey> // give the &lt;p&gt; elements goldenrod <br> // backgrounds <br> </grey>
+            .style('background-color', 'goldenrod') <br>
+            <grey> Use a function to specify the height of <br> 
+              // your &lt;p&gt; elements. When you use a <br>
+              // function instead of a constant, d3 <br>
+              // assumes that the first parameter <br>
+              // (usually called 'd') is the current <br> 
+              // datum. <br>
+              // d3 also assumes that second paramater <br> 
+              // (usually 'i') is the index of your <br>
+              // current datum.  <br></grey>
+            .style('height', function(d){ return d+'px';}) <br>
+            <grey>// You must use the 'return;' keyword, </grey><br>
+            <grey>/ but {} brackets are not required. <br></grey>
+            .style('width', function(d) return d*4+'px';) <br>
+
+            <grey>// Add text to each selected &lt;p&gt; element: <br></grey>
+            .text(function(d){ return '&lt;p&gt; #' + d;}); <br>
+          </code>
+          <br><br>
+          <b>The result:</b>
+          <br>
+          <code> &lt;div class='bar-example'&gt;  &lt;/div&gt; </code>  HTML code becomes: <br>
+          <div class='bar-example'></div>
+
+
+
+
+
+             <h2>'attr' and 'style'</h2>
+          As you can see in the previous example, you can modify attributes and styles of HTML elements by using 
+          <code>.attr</code> and <code>.style</code> on the element objects. 
+          <br><br>
+          <a href="http://www.w3schools.com/html/html_tables.asp"> Jerome Cukier's d3 cheatsheet</a> is very very excellent resource when you can't remember the possible <code>.attr</code> and <code>.style</code> options, but here is an abbreviated list:
+      
+
+            <h2>.style</h2>
+            <TABLE border=1>
+            <TR bgcolor="#999999"> <TH> style </TH> <TH> type of value </TH>  </TR>
+              <TR> <TD> position </TD> <TD> 'static', 'relative', absolute', or fixed' </TD> </TR>
+              <TR> <TD> top </TD> <TD> number [px, cm, in…] </TD> </TR>
+              <TR> <TD> bottom </TD> <TD> '' </TD> </TR>
+              <TR> <TD> left </TD> <TD> '' </TD> </TR>
+              <TR> <TD> right </TD> <TD> '' </TD> </TR>
+              <TR> <TD> width </TD> <TD> '' </TD> </TR>
+              <TR> <TD> height </TD> <TD> '' </TD> </TR>
+              <TR> <TD> padding </TD> <TD> 1-4 numbers [+unit] </TD> </TR>
+              <TR> <TD> margin </TD> <TD> '' </TD> </TR>
+              <TR> <TD> color </TD> <TD> name,#RRGGBB, rgb(R,G,B) </TD> </TR>
+              <TR> <TD> stroke </TD> <TD> '' </TD> </TR>
+              <TR> <TD> opacity </TD> <TD> number 0-1 </TD> </TR>
+              <TR> <TD> fill-opacity </TD> <TD> '' </TD> </TR>
+              <TR> <TD> stroke-opacity </TD> <TD> '' </TD> </TR>
+              <TR> <TD> border-color </TD> <TD> '' </TD> </TR>
+              <TR> <TD> background-color </TD> <TD> '' </TD> </TR>
+              <TR> <TD> border-width </TD> <TD> number [+unit] </TD> </TR>
+              <TR> <TD> border-style </TD> <TD> none|hidden|dotted|dashed|solid|double|<br>groove|ridge|inset|outset </TD> </TR>
+              <TR> <TD> stroke-width </TD> <TD> number </TD> </TR>
+              <TR> <TD> stroke-dasharray </TD> <TD> numbers (separated by commas) </TD> </TR>
+              <TR> <TD> stroke-linecap </TD> <TD> butt|round|square (type of line ending) </TD> </TR>
+              <TR> <TD> stroke-linejoin </TD> <TD> miter|round|bevel (how intersecting lines meet) </TD> </TR>
+              <TR> <TD> writing-mode </TD> <TD> tb (if specified, text is written vertically) </TD> </TR>
+              <TR> <TD> glyph-orientation-vertical </TD> <TD> 0|1 (If 0, and writing-mode is set to tb, letters are horizontal (stacked), else if set to 1 when text 
+            mode is set to tb, the text will be rotated (written from top to bottom) </TD> </TR>
+               </TABLE>
+          
+          <h2>.attr</h2>
+
+          .arrt() set's the attribute of an HTML element: an HTML attribute is any <red>property</red>/<green>value</green> pair that you could include between an element’s <> brackets.
+          <br><br>
+          <code>
+              &lt;p <red>class</red>=<green>"caption"</green>&gt; <br>
+              &lt;select <red>id</red>=<green>"country"</green>&gt;<br>
+              &lt;img <red>src</red>=<green>"logo.png"</green> <red>width</red>=<green>"100px"</green>/&gt;
+          </code>
+          <br><br>
+            <TABLE border=1>
+            <TR bgcolor="#999999"> <TH> <red>attr property</red> </TH> <TH> <green>type of value</green> </TH>  </TR>
+            <TR> <TD> transform </TD> <TD> "translate(x,y)" </TD> </TR>
+            <TR> <TD> x, y </TD> <TD> number (used for rectangles and text) </TD> </TR>
+            <TR> <TD> x1,x2,y1,y2 </TD> <TD> number (used for lines) </TD> </TR>
+            <TR> <TD> points </TD> <TD> "x,y x,y x,y" (used for polygons and polylines) </TD> </TR>
+            <TR> <TD> cx,cy </TD> <TD> number (used for circles and ellipses) </TD> </TR>
+            <TR> <TD> width, height </TD> <TD> number </TD> </TR>
+            <TR> <TD> r </TD> <TD> number (radius of a circle) </TD> </TR>
+            <TR> <TD> rx,ry </TD> <TD> number (radii of an ellipse) </TD> </TR>
+            <TR> <TD> text-anchor </TD> <TD> start|middle|end (if the text is aligned to the left, centered or aligned to the right) </TD> </TR>
+            <TR> <TD> textLength </TD> <TD> Number (If specified, the text will be adjusted to fit the specified length </TD> </TR>
+             </TABLE>
+
+
+         </div>
+
+
+
+
+
+
+         <div class="threecol thick">
+        
+       
+
+
+            <h2>SVG: Scalabe Vector Graphics</h2>
+            Instead of <code>div</code>s or other classic HTML elements to make plots, we can use Scalable Vector Graphics - SVGs. They are handy: fast, scalable, and come in many shapes. <br><br>
+
+            The following D3 code makes the picture below:<br><br>
+
+            <code>
+                    <grey>
+                    // SVGs <br>
+                    // HTML CODE: <br>
+                    </grey>
+                     &lt;div class=<purple>'svg-example'</purple>&gt;&lt;/div&gt; <br>
+                       <br>
+                       <grey>
+                    JAVASCRIPT CODE: <br>
+                    //Width and height <br>
+                  </grey>
+                    var w = 500; <br>
+                    var h = 75; <br>
+                    var dataset = [ 5, 10, 15, 20, 25 ]; <br>
+                     <br>
+                     <grey>// selects HTML element with class 'svg-example':<br></grey>
+                    var svg = d3.select(".<purple>svg-example</purple>")  <br>
+                     &nbsp;&nbsp;     .append("svg")  <grey> // appends an SVG <br> &nbsp;&nbsp;// element to the selection </grey><br>
+                     &nbsp;&nbsp;     .style('background-color', 'steelblue')  <br>
+                     &nbsp;&nbsp;     .attr("width", w) <br>
+                     &nbsp;&nbsp;     .attr("height", h); <br>
+                           <br>
+
+                    var circles = svg.selectAll("circle")  <br>
+                     &nbsp;&nbsp;          .data(dataset) <grey>// attaches data </grey><br>
+                     &nbsp;&nbsp;          .enter() <grey>// creates placeholder <br> &nbsp;&nbsp;// elements for each datum</grey><br>
+                     &nbsp;&nbsp;          .append("circle"); <grey> // appends a circle <br> &nbsp;&nbsp;// for each datum </grey> <br>  
+                                <br>
+
+
+                    circles.attr("cx", function(d, i) { <br>
+                      &nbsp;&nbsp;&nbsp;    return (i * 60) + 20; <br>
+                      &nbsp;&nbsp;}) <br>
+                    &nbsp;&nbsp;.attr("fill", "gold") <br>
+                    &nbsp;&nbsp;.attr("stroke", "red") <br>
+                    &nbsp;&nbsp;.attr('opacity', '.5') <br>
+                    &nbsp;&nbsp;.attr("stroke-width", "10px") <br>
+                    &nbsp;&nbsp; .attr("cy", h/2) <br>
+                    &nbsp;&nbsp; .attr("r", function(d) { <br>
+                    &nbsp;&nbsp;&nbsp;      return d; <br>
+                    &nbsp;&nbsp; }); <br>
+            </code>
+            <br>
+            <div class='svg-example'></div>
+            <br><br>
+            Now let's try to make a bar chart using SVGs.
+            <br><br>
+
+            <div class='svg-bar-chart'></div>
+            <br><br>
+            The code:
+            <br><br>
+            <code>
+                <grey>// SVG bar chart with padding<br>
+                //////////////////////////////////////////////////<br>
+                // PARAMETERS:</grey><br>
+                var dataset = [ 11, 10, 13, 19, 21, 25, 22, 18, 15, 13,<br>
+                &nbsp;&nbsp;           11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];<br>
+                var data_max = 25;<br>
+                var w = 300;<br>
+                var h = 200;<br>
+                var padding = 4;<br>
+                var pad_bottom = 10;<br>
+                var pad_top = 50;<br>
+                var pad_left = 10;<br>
+                var pad_right = 10;<br>
+                var text_down = .04;<br>
+                <grey>//////////////////////////////////////////////////<br>
+                // Code:</grey><br>
+                var svg = d3.select(".svg-bar-chart")<br>
+                &nbsp;&nbsp;       .append("svg")<br>
+                &nbsp;&nbsp;       .style('background-color', '#909099')<br>
+                &nbsp;&nbsp;       .attr("width", w)<br>
+                &nbsp;&nbsp;       .attr("height", h);<br>
+                      <br>
+                svg.selectAll("rect")<br>
+                &nbsp;&nbsp;  .data(dataset)<br>
+                &nbsp;&nbsp;  .enter()<br>
+                &nbsp;&nbsp;  .append("rect")<br>
+                &nbsp;&nbsp;  .attr("x", function(d, i) {<br>
+                &nbsp;&nbsp; &nbsp;&nbsp;       return (pad_left + (i) * <br>&nbsp;&nbsp;&nbsp;&nbsp;(w-pad_right-pad_left+padding) /
+                                                      <br>&nbsp;&nbsp;&nbsp;&nbsp; (dataset.length));<br>
+                &nbsp;&nbsp;   })<br>
+                &nbsp;&nbsp;  .attr("y", function(d) { 
+                                      <br>&nbsp;&nbsp;&nbsp;&nbsp; return h-((h-pad_top-pad_bottom)*
+                                      <br>&nbsp;&nbsp;&nbsp;&nbsp; (d/data_max))-pad_bottom
+                                      <br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                &nbsp;&nbsp;  .attr("width", function(d, i){
+                                       <br>&nbsp;&nbsp;&nbsp;&nbsp;return (w / dataset.length)-padding
+                                       <br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                &nbsp;&nbsp;  .attr("height", function(d){ 
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;return (h-pad_top-pad_bottom)*<br>&nbsp;&nbsp;&nbsp;&nbsp;(d/data_max)
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                &nbsp;&nbsp;  .attr("fill", function(d) {<br>
+                &nbsp;&nbsp; &nbsp;&nbsp;       return "rgb(20, 60, " + 
+                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;(Math.round((d/data_max) * 255)) + <br>&nbsp;&nbsp;&nbsp;&nbsp;")";
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;  });<br>
+                  <br>
+                svg.selectAll("text")<br>
+                &nbsp;&nbsp;  .data(dataset)<br>
+                &nbsp;&nbsp;  .enter()<br>
+                &nbsp;&nbsp;  .append("text")<br>
+                &nbsp;&nbsp;  .attr("x", function(d, i) {<br>
+                &nbsp;&nbsp; &nbsp;&nbsp;       return (pad_left + (i) *
+                                                        <br>&nbsp;&nbsp;&nbsp;&nbsp;(w-pad_right-pad_left+padding) 
+                                                        <br>&nbsp;&nbsp;&nbsp;&nbsp; / (dataset.length));<br>
+                &nbsp;&nbsp;   })<br>
+                &nbsp;&nbsp;  .attr("y", function(d) { 
+                                          <br>&nbsp;&nbsp;&nbsp;&nbsp;return h-((h-pad_top-pad_bottom)*
+                                                  <br>&nbsp;&nbsp;&nbsp;&nbsp;(d/data_max))-pad_bottom+
+                                                  <br>&nbsp;&nbsp;&nbsp;&nbsp;h*text_down})<br>
+                &nbsp;&nbsp;  .text(function(d) {<br>
+                &nbsp;&nbsp; &nbsp;&nbsp;       return d;
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp; })<br>
+                &nbsp;&nbsp;  .attr("font-family", "sans-serif")<br>
+                &nbsp;&nbsp;  .attr("font-size", "9px")<br>
+                &nbsp;&nbsp;  .attr("fill", "white");<br>
+                 <br><br>
+                svg.append("text")<br>
+                &nbsp;&nbsp; .attr("x", (w / 2))  <br>           
+                &nbsp;&nbsp; .attr("y", h*title_down)<br>
+                &nbsp;&nbsp; .attr("text-anchor", "middle")  <br>
+                &nbsp;&nbsp; .attr("font-family", "sans-serif")<br>
+                &nbsp;&nbsp; .style("font-size", "19px") <br>
+                &nbsp;&nbsp; .text(title);<br>
+                 <grey>//////////////////////////////////////////////</grey>
+            </code>
+
+
+            <h2>Example: Random Points</h2>
+
+            <canvas id="canvas"></canvas>
+
+
+
+
+
+         </div>   
+
+
+
+          <div class="onecol">
+          <h2><b>hillz is testing</b></h2>
+
+
+          Hello.
+        </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+  <script type="text/javascript"> 
+
+
+  var array = [1,2,3,4,5]
+  var element = 2
+  // Hills is testing!
+
+
+  // function myFunction(params={param1 : 50, param2 : 100}){
+  //     //check if params is an object
+  //     //check if the parameters I need are non-null
+  //     //blah-blah
+
+  //     console.log(params.param1)
+  //     console.log(params.param2)
+  // }
+
+
+// function myFunc(requiredArg, optionalArg='defaultValue'){
+//   //do stuff
+// }
+
+
+  // myFunction({ param1 : 70, param2 : 175});
+
+
+
+
+  var array = [1,2,3,4,5]
+  var element = 2
+  // Hills is testing!
+  function RemoveArrayElement( array, element ){
+
+    pos=array.lastIndexOf(element)
+    if(!!pos && pos!=-1){
+      array.splice(pos, 1)
+    }
+    return(array)
+  }
+
+  // function RemoveArrayElement( array, element ) !!let (pos=array.lastIndexOf(element)) pos != -1 && array.splice(pos, 1);
+
+
+  var a = [1,2,3,4,5]
+  a = RemoveArrayElement(array=a, 2)
+  console.log(a)
+  // document.write()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // foo({ name:'soubok', project:'jslibs' })
+  // foo({ project:'jslibs', name:'soubok'})
+
+  /////////////// EXAMPLE: RANDOM POINTS:
+  var num = 200; // number of points
+  var speed = .5
+  var canvas = document.getElementById("canvas");
+  var width = canvas.width = 300;
+  var height = canvas.height = 200;
+  var ctx = canvas.getContext("2d");
+  var point_width = 10
+  var point_height = 10
+  var max_point_size = 20
+  var particles = d3.range(num)
+                    .map(function(i) {
+                          return [Math.round(width*Math.random()), 
+                                  Math.round(height*Math.random()),
+                                  Math.round(point_width*Math.random())];
+  });
+
+  // console.log(d3.range(num))
+  // console.log(d3.timer)
+
+  d3.timer(step);
+
+  function step() {
+    ctx.fillStyle = "rgba(195,195,235,0.3)";
+    ctx.fillRect(0,0,width,height);
+    ctx.fillStyle = "rgba(80,100,120,0.3)";
+    particles.forEach(function(p) { // note the foreach function
+      p[0] += speed*Math.round(2*Math.random()-1); // uniform -1, 1
+      p[1] += speed*Math.round(2*Math.random()-1);
+      p[2] += speed*Math.round(2*Math.random()-1); // for size
+      // boundaries:
+      if (p[0] < 0) p[0] = width;
+      if (p[0] > (width)) p[0] = 0;
+      if (p[1] < 0) p[1] = height;
+      if (p[1] > (height)) p[1] = 0;
+      // size boundaries:
+      if (p[2] < 0) p[2] = 0
+      if (p[2] > max_point_size) p[2] = max_point_size
+
+      drawPoint(p);
+    });
+  };
+
+
+  function drawPoint(p) {
+    ctx.fillRect(p[0],p[1],p[2],p[2]);
+  };
+
+
+
+
+
+
+
+    // Your D3 code goes here! :) 
+    var dataset = [15, 20, 25, 30, 35] // create your dataset
+    d3.select('.bar-example') // selects the element (in my case, div) that has class ('bar-example'). '#foo' selects elements with ID 'foo', and 'div' would select the first <div></div> in my HTML document.
+      .selectAll('p') //  Selects all <p> elements in the DOM. Since none exist yet, this returns an empty selection. Think of this empty selection as representing the paragraphs that will soon exist.
+      .data(dataset) // There are five values in our data set, so everything past this point is executed five times, once for each value.
+      .enter() // To create new, data-bound elements, you must use enter(). This method looks at the DOM, and then at the data being handed to it. If there are more data values than corresponding DOM elements, then enter() creates a new placeholder element on which you may work your magic. It then hands off a reference to this new placeholder to the next step in the chain.
+      .append('p') // Takes the placeholder selection created by enter() and inserts a p element into the DOM.
+      .style('color', 'steelblue') // alters the style of your selected <p> elements
+      .style('margin', '5px')
+      .style('background-color', 'goldenrod')
+      .style('height', function(d){ return d+'px';}) // d, the first paramater in a function you make, is always the data. The second paramater (usually i) is the index of your data. 
+      .style('width', function(d){ return d*4+'px';})
+      .text(function(d){ return '<p> #' + d;});
+
+
+
+
+      // SVGs
+      //Width and height
+      var w = 300;
+      var h = 75;
+      var dataset = [ 5, 10, 15, 20, 25 ];
+
+      var svg = d3.select(".svg-example")
+            .append("svg")
+            .style('background-color', 'steelblue')
+            .attr("width", w)
+            .attr("height", h);
+
+
+      var circles = svg.selectAll("circle")
+                 .data(dataset)
+                 .enter()
+                 .append("circle");
+
+
+      circles.attr("cx", function(d, i) {
+            return (i * 60) + 20;
+        })
+      .attr("fill", "yellow")
+      .attr("stroke", "red")
+      .attr('opacity', '.5')
+      .attr("stroke-width", "10px")
+       .attr("cy", h/2)
+       .attr("r", function(d) {
+            return d;
+       });
+
+
+
+
+
+
+      // SVG bar chart with padding
+      //////////////////////////////////////////////////
+      // PARAMETERS:
+      var dataset = [ 11, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+      var data_max = 25
+      var w = 300;
+      var h = 200;
+      var padding = 4;
+      var pad_bottom = 10;
+      var pad_top = 50;
+      var pad_left = 10;
+      var pad_right = 10;
+      var text_down = .04;
+      var title_down = .15;
+      var title = "SVG Bar Graph with Padding";
+      //////////////////////////////////////////////////
+      // Code:
+      var svg = d3.select(".svg-bar-chart")
+            .append("svg")
+            .style('background-color', '#909099')
+            .attr("width", w)
+            .attr("height", h);
+
+      svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", function(d, i) {
+            return (pad_left + (i) * (w-pad_right-pad_left+padding) / (dataset.length));
+        })
+       .attr("y", function(d) { return h-((h-pad_top-pad_bottom)*(d/data_max))-pad_bottom})
+       .attr("width", function(d, i){ return (w / dataset.length)-padding})
+       .attr("height", function(d){ return (h-pad_top-pad_bottom)*(d/data_max)})
+       .attr("fill", function(d) {
+            return "rgb(20, 60, " + (Math.round((d/data_max) * 255)) + ")";
+        });
+
+      svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .attr("x", function(d, i) {
+            return (pad_left + (i) * (w-pad_right-pad_left+padding) / (dataset.length));
+        })
+       .attr("y", function(d) { return h-((h-pad_top-pad_bottom)*(d/data_max))-pad_bottom+h*text_down})
+       .text(function(d) {
+            return d;
+       })
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "9px")
+       .attr("fill", "white");
+
+       svg.append("text")
+        .attr("x", (w / 2))             
+        .attr("y", h*title_down)
+        .attr("text-anchor", "middle")  
+        .attr("font-family", "sans-serif")
+        .style("font-size", "19px") 
+        .text(title);
+       //////////////////////////////////////////////////
+
+
+
+
+      </script>
+ 
+
+
+
+</body> </html>
+
+
+

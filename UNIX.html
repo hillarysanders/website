@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title> 
+            Hillary Sanders
+        </title> 
+        <meta name="author" content="Hillary Sanders"> 
+        <meta name="keywords" content="Hillary Sanders Statistics Berkeley Premise Data Scientist Art Bayesian Painting"> 
+        <meta name="description" content="Hillary Sanders: Data Scientist?"> 
+        <meta name="robots" content="index, follow, noarchive"> 
+
+      <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+      <link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+      <style>
+         .midwrap {
+            min-height: 1800px;
+         }
+         .light {
+            min-height: 1525px;
+         }
+      </style> 
+   </head>
+
+   <body>
+      
+      <div class="midwrap">
+         <div class="header codex basic"><h1>hillary sanders</h1></div> 
+
+         <div class="navbox">
+            <ul class="navlist">
+               <a href="index.html"><li class="navitem basic">about hillz</li></a>
+               <a href="drawings.html"><li class="navitem basic">drawings</li></a>
+               <a href="paintings.html"><li class="navitem basic">paintings</li></a>
+               <a href="mixed-media.html"><li class="navitem basic">mixed media</li></a>
+               <a href="cheatsheets.html"><li class="navitem basic breadcrumb">cheatsheets</li></a>
+               <a href="code.html"><li class="navitem basic">code</li></a>
+               <a href="graphs.html"><li class="navitem basic">graphs</li></a>
+               <a href="resume.html"><li class="navitem basic">resume</li></a>
+            </ul>
+         </div>
+
+        <div class="navbox navbox">
+            <ul class="navlist-mini">
+               <a href="emacs.html"><li class="navitem-mini basic">Emacs</li></a>
+               <a href="python.html"><li class="navitem-mini basic">Python</li></a>
+               <a href="scala.html"><li class="navitem-mini basic">Scala</li></a>
+               <a href="latex.html"><li class="navitem-mini basic">LaTeX</li></a>
+               <a href="UNIX.html"><li class="navitem-mini basic breadcrumb">UNIX</li></a>
+               <a href="ruby-on-rails.html"><li class="navitem-mini basic">Ruby on Rails</li></a>
+               <a href="probability_theory.html"><li class="navitem-mini basic">Probability</li></a>
+               <a href="bayesian_analysis.html"><li class="navitem-mini basic">Bayesian Stats</li></a>
+            </ul>
+        </div>
+
+            <!-- Main content --> 
+
+         <div class="onecol">
+          <h2><b>UNIX (OSX)</b></h2>
+         </div>
+        
+         <div class="midwrap light">
+         <div class="threecol thick">
+
+          <h2>The Basics</h2>
+          <li><b>$ ls</b> : shows what's listed in the current directory</li>
+          <li><b>$ ls -a</b> : shows what's listed in the current directory, including hidden files</li>
+          <li><b>$ mkdir foo</b> : makes a folder in the current directoy called foo</li>
+          <li><b>$ cd foo</b> : move into the folder foo</li>
+          <li><b>$ cd ..</b> : move backwards into the parent directory</li>
+          <li><b>$ pwd</b> : prints current working directory</li>
+          <li><b>$ ls foo</b> : lists the contents of the folder foo</li>
+          <br>
+          <li><b>$ ls ~/foo</b> : lists the contents of the folder foo that lives in your home directory (~/, e.g. '/Users/hills') </li>
+          <li><b>$ cp foo.txt bar.txt</b> : duplicates foo.txt and saves it as bar.txt </li>
+          <li><b>$ mv foo.txt some-folder/bar.txt</b> : moves foo.txt to the some-folder folder, and calls it bar.txt (foo.txt is deleted)</li>
+          <li>$ rm bar.txt<b></b> : deletes foo.txt</li>
+          <br>
+          <li><b>$ ^L</b> ([Control]-[d]) : clears terminal screen (<b>clear</b> also does this)</li>
+          <li><b>$ cat foo.txt</b> : prints all of foo.txt to the screen</li>
+          <li><b>$ less foo.txt</b> : prints the first few lines of foo.txt to the screen: to continue, press space, to quit reading, press q.</li>
+          <li><b>$ head foo.txt</b> : prints the first ten lines of foo.txt</li>
+          <li><b>$ tail foo.txt</b> : prints the last ten lines of foo.txt</li>
+
+
+
+          <h2>Text Searches</h2>
+           <li><b>$ less /keyword</b> : If you use the <b>less foo.txt</b> command to inspect the contents of foo.txt, you can type a keyword: <b>/some-keyword</b> before you exit (<b>q</b>), and any matches to that keyword will be highlighted.</li>
+          <br>
+          <li><b>$ grep keyword foo.txt</b> : searches for an exact match to keyword in the file foo.txt</li>
+          <li><b>$ grep 'I like ice cream' foo.txt</b> : searched for an exact match to the phrase 'I like ice cream'</li>
+              &nbsp;&nbsp;&nbsp;- <b>grep -i</b> : ignores cases
+          <br>&nbsp;&nbsp;&nbsp;- <b>grep -v</b> : only displays lines that don't match
+          <br>&nbsp;&nbsp;&nbsp;- <b>grep -c</b> : only prints the number of lines that include a match
+          <br>&nbsp;&nbsp;&nbsp;- <b>grep -ivc</b> : all three i, v, and c options at once
+          <br>
+          <li><b>wc foo.txt</b> : displays the line count, word count, and character count of foo.txt</li>
+              &nbsp;&nbsp;&nbsp;- <b>wc -l</b> : line count
+          <br>&nbsp;&nbsp;&nbsp;- <b>wc -w</b> : word count
+          <br>&nbsp;&nbsp;&nbsp;- <b>wc -c</b> : character count
+
+
+
+           <h2>Redirection</h2>
+          type <b>$ cat > deepest-thoughts</b>. Then type: <br>
+          <b>
+            &nbsp;&nbsp;$ I<br>
+            &nbsp;&nbsp;$ am a mega awesome<br>
+            &nbsp;&nbsp;$ unixer<br>
+          </b>
+          Then enter <b>$ ^D</b>. The text you entered will be routed to a file named deepest-thoughts, because the <b>></b> symbol redirects the output of a command ingto whatever is to the right of the <b>></b> symbol. 
+          <br><br>
+          Type <b> open deepest-thoughts </b> to open the file or <b>cat deepest-thoughts</b> to see the lines printed to your screen.
+          <b> >> </b> appends to a file. So: <br>
+          <b>$ cat >> deepest-thoughts</b><br>
+          <b>$ seriously</b> <br>
+          <b>$ ^D </b><br>
+          Will append the line 'seriously' to your deepest-thoughts file.
+          <li><b>$ cat foo1 foo2 > megafoo</b> : appends foo1 to foo2 and saves it as megafoo. </li>
+          <br>
+          The <b> < </b> symbol redirects the input of a command.
+          <li><b>$ sort < list.txt > foo.txt</b> : sorts list.txt and saves it to the files sorted.txt</li>
+          <li><b>$ list.txt | sort </b> : the<b> | </b>symbol pipes list.txt into the sort command. So <b>$ list.txt | sort </b> is equivalent to <b>$ sort list.txt</b>, which is the same as <b>sort < list.txt</b></li>
+
+         </div>
+         
+
+
+         <div class="threecol thick">
+
+          <h2>Wildcards</h2>
+          <b>*</b> is called a wildcard (sort of like in regular expressions) - it's used in text searches. A <b>*</b> matches against any (or no) characters in a file or directory name.
+          <li><b>$ ls kittens*</b> : </li> shows all files in the current directory that starts with kittens.
+          <li><b>$ ls *kittens</b> : </li> shows all files in the current directory that ends with kittens.
+          The <b>?</b> character matches to any single character.
+          <li><b>$ ls ?ittens*</b> : could match to mittens, kittens, or mittons.csv, but not, er, lots-of-kittens. </li>
+
+          
+          <h2> Manuals </h2>
+          <li><b>$ man some-command</b> : shows the manual page for some-command. (Press q to quit)</li>
+          <li><b>$ apropos keyword | head</b> : returns the first few commands that have the word 'keyword' in their header. So, if you type </li>
+
+              <h2> File Access Rights </h2>
+          <li><b>$ ls -l</b> : displays a very verbose version of the items in the current directory. Each line represents a file, and there are various bits of information displayed (<b>access rights, owner, group-owner, size of the file, time the file was created, filename</b>).</li>
+          <br>
+          <b> Access rights </b> consist of a ten character string. The first letter is either 'd' (if it's a directory), or '-' (if it's not). The next three letters show the read, write, and execution permssions for the user that owns the file. The next three shows the read, right, and execution permissions for the group of people that own the file (group owner), and the last three characters gives the read right and execution permissions for everyone else. If the symbol showing permissions is 'r', 'w', or 'x', that means the user(s) can respectively read, write to, or execute the given file, but if the character is '-', they cannot. So if the permissions are <b>-rw-r--r--</b>, nobody but the owner can write to the file, but everyone can read it. 
+          <br>
+          The command <b>chmod</b> allows you to change the permissions of a file or directory.<br>
+          - <b>u</b> stands for user, <b>g</b> stands for group, <b>o</b> stands for other, and <b>a</b> stands for all. <br>
+          - <b>r</b> stands for read, <b>w</b> stands for write, and <b>x</b> stands for execute. <br>
+          - <b>+</b> = add the permission, and <b>-</b> = remove a permission.
+          <li><b>$ chmod go-rwx</b> : remove the read, write, and execute rights for the group and other users.</li>
+          <li><b>$ chmod a+rw</b> : give the read and write permissions to all users.</li>
+
+          <h2>Jobs</h2>
+          <li><b>$ ps</b> : shows the the currently running jobs</li>
+          <li><b>$ sleep 10</b> : sleeps the terminal for 10 seconds</li>
+          <li><b>$ sleep 100 &</b> : sleeps the terminal for 100 seconds, but in the background due to the ampersand. The unqiue job identifier (PID) is also printed. You can type <b>ps</b> before the 100 seconds is up to see the job running.</li>
+          <li><b>$^Z bg</b> : <b>^Z</b> suspends a currently running process, abd <b>bg</b> restarts the process but puts it in the background.</li>
+          <li><b>$ jobs</b> : displays a list of currently running jobs (many processes can be contained in one job)</li>
+          <li><b>$ fg %i</b> : restarts the ith job in the list of jobs, where i is an integer.</li>
+          <li><b>$ kill %i</b> : kills the ith job if it is suspended or a background process.</li>
+          <li><b>$ ^C</b> : kills a job that is currently running in the foreground. 
+          </li>
+          <li><b>$ kill 1234</b> : kills a process with PID number 1234</li>
+
+         </div>
+
+
+
+
+         <div class="threecol thick">
+         <h2>Other Useful Tips & Tricks</h2>
+
+         <li><b>$ df .</b> : shows how much space is left on your computer</li>
+         <li><b>$ du</b> : shows the amount of space used by each subdirectory. This is usually a super long list though, so instead:</li>
+         <li><b>$ du -d 1</b> : goes one directory deep </li>
+         <li><b>$ du -d 2</b> : goes two directories deep, and so on.</li>
+         <br>
+         <li><b>$ zip foo foo.txt</b> : compresses foo.txt and saves it as foo.txt.zip. Note that you can zip up whole directories, or use wildcards to zip multiple files in a directory at once.</li>
+         <li><b>$ unzip foo.txt.zip</b> : unzips it</li>
+         <br>
+         <li><b>$ file *</b> : shows the types of objects in your current directory (jpeg, text file, etc...)</li>
+         <br>
+         <li><b>$ history</b> : shows a list of the 15 most recent commands that you typed into the terminal. If you type <b>history -k</b>, the last k commands will show up.</li>
+
+
+         <!-- <li><b>$ </b> : </li>
+         <li><b>$ </b> : </li>
+          <li><b>$ </b> : </li>
+          <li><b>$ </b> : </li> -->
+         </div>
+       </div>
+     </div>
+
+</body> </html>
+
+
+

@@ -1,0 +1,319 @@
+
+
+
+
+red {
+	color: red;
+}
+green {
+	color: green;
+}
+blue {
+	color: blue;
+}
+purple {
+	color: purple;
+}
+yellow {
+	color: yellow;
+}
+pink {
+	color: pink;
+}
+grey {
+	color: #666666;
+}
+
+.midwrap {
+	min-height: 2625px;
+	width: 1000px;
+	background-color: lightgrey;
+	margin: auto;
+	font-size: 15px;
+	font-family: colab;
+}
+
+.midwrap-transparent {
+	width: 1000px;
+	background-color: transparent;
+	margin: auto;
+	font-size:15px;
+	font-family: colab;
+}
+					
+.header {
+	width: 1000px;
+	height: 120px;
+	background-color: #858589;
+	font-size: 70px;
+	text-align: center;
+	margin-top: 20px;
+}
+					
+.navbox {
+	width: 1000px;
+	height: 80px;
+	background-color: #353539;
+}
+.navitem {
+	background-color: #9999aa;
+	height: 20px;
+	font-size: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	text-align: center;
+	width: 109px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	display: inline-block;
+	color:#202030;
+}
+.navitem-mini {
+	background-color: #9999aa;
+	height: 17px;
+	font-size: 15px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 4px;
+	text-align: center;
+	width: 100px;
+	margin-top: 8px;
+	margin-bottom: 0px;
+	display: inline-block;
+	color:#202030;
+}
+
+ul.navlist {
+	position: relative;
+	margin: auto;
+	width:1000px;
+	width: 532px;
+}
+ul.navlist-mini {
+	position: relative;
+	margin: auto;
+	width: 480px;
+}
+
+
+.gallery {
+	width: 309px;
+	border: 4px solid #303034;
+	margin-top: 10px;
+}
+
+.gallery-zoom {
+	width: 993px;
+	border: 4px solid #202024;
+}
+
+.gallery-zoom-little {
+	width: 800px;
+	border: 4px solid #202024;
+}
+
+.graph {
+	width: 609px;
+	border: 4px solid #303034;
+	margin-top: 10px;
+}
+
+
+
+.twocol {
+	width: 630px;
+	background-color: transparent;
+	margin-left: 10px;
+	margin-top: 3px;
+	float: left;
+	overflow: hidden;
+}
+
+.threecol {
+	width: 320px;
+	background-color: transparent;
+	margin-left: 10px;
+	margin-top: 3px;
+	float: left;
+	overflow: hidden;
+}
+
+.onecol {
+	width: 950px;
+	background-color: transparent;
+	margin: 15px;
+	float:left;
+	overflow: hidden;
+}
+
+.halfcol {
+	width: 470px;
+	background-color: transparent;
+	margin: 0px;
+	margin-left: 5px;
+	float: left;
+	overflow: hidden;
+}
+
+
+.thick {
+	width: 300px;
+	background-color: transparent;
+	margin-left: 25px;
+	margin-top: 3px;
+	float: left;
+	overflow: hidden;
+}
+	
+.about-me-box {
+	width: 800px;
+	height: 150px;
+	border: 4px solid #aaaaac;
+	background-color: #434347;
+	margin: auto;
+	margin-top: 50px;
+}
+.about-me-text {
+	width: 800px;
+	height: 800px;
+	background-color: transparent;
+	margin: 50px;
+	color: #bbbbbe;
+}
+
+.mini-info-box {
+	color: #bbbbbe;
+}
+
+
+body {
+	height: 100%;
+	background-color: #353539;
+}
+					
+html {
+	height: 100%;
+}
+
+h1 {
+	position: relative;
+	top: 33px;
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 20px;
+	line-height: 100%;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+h3 {
+	font-size: 17px;
+	margin-bottom: 5px;
+	margin-top: 20px;
+	font-weight: bolder;
+}
+
+
+a {
+	color: #00c;
+	text-decoration: none;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+a:hover {
+  color: #44b;
+}
+
+
+.bullet {
+	list-style: square;
+	padding: 30px;
+}	
+
+
+
+.breadcrumb {
+	background-color: #dddddf;
+}
+
+
+
+
+.music-button {
+	background-color: #303034;
+	/*border-radius: 10px;*/
+	height: 15px;
+	font-size: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	text-align: center;
+	width: 90px;
+	color: white;
+}
+.inline {
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+
+/*Tables*/
+caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+table, th, td {vertical-align:middle;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+td {background: #bfcfe3;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tbody tr:nth-child(even) td, tbody tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}
+table {
+	font-size: 13px;
+	margin-bottom:1.4em;
+	width:100%;
+}
+
+
+
+/* FONTS! */
+
+
+@font-face {
+	font-family: basic;
+	src: url("fonts/basictitlefont.ttf") format("truetype");
+}
+.basic {
+	font-family: 'basic';
+}
+
+@font-face {
+	font-family: espacio;
+	src: url("fonts/Espacio.ttf") format("truetype");
+}
+.espacio {
+	font-family: 'espacio', Sans-serif;
+	font-size: 16px;
+	letter-spacing: 2px;
+	line-height: 110%;
+}
+
+@font-face {
+	font-family: colab;
+	src: url("fonts/ColabLig.otf") format("opentype");
+}
+
+code {
+	font-family: courier;
+	font-size: 12px;
+	color: #204075;
+}
+
+
+
+

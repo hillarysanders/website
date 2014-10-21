@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title> 
+            Hillary Sanders
+        </title> 
+        <meta name="author" content="Hillary Sanders"> 
+        <meta name="keywords" content="Hillary Sanders Statistics Berkeley Premise Data Scientist Art Bayesian Painting"> 
+        <meta name="description" content="Hillary Sanders: Data Scientist?"> 
+        <meta name="robots" content="index, follow, noarchive"> 
+
+      <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+      <link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+      <style>
+         .midwrap {
+            min-height: 3000px;
+         }
+      </style> 
+   </head>
+
+   <body>
+      
+      <div class="midwrap">
+         <div class="header codex basic"><h1>hillary sanders</h1></div> 
+
+         <div class="navbox">
+            <ul class="navlist">
+               <a href="index.html"><li class="navitem basic">about hillz</li></a>
+               <a href="drawings.html"><li class="navitem basic">drawings</li></a>
+               <a href="paintings.html"><li class="navitem basic">paintings</li></a>
+               <a href="mixed-media.html"><li class="navitem basic">mixed media</li></a>
+               <a href="cheatsheets.html"><li class="navitem basic breadcrumb">cheatsheets</li></a>
+               <a href="code.html"><li class="navitem basic">code</li></a>
+               <a href="graphs.html"><li class="navitem basic">graphs</li></a>
+               <a href="resume.html"><li class="navitem basic">resume</li></a>
+            </ul>
+         </div>
+
+        <div class="navbox navbox">
+            <ul class="navlist-mini">
+               <a href="emacs.html"><li class="navitem-mini basic">Emacs</li></a>
+               <a href="python.html"><li class="navitem-mini basic">Python</li></a>
+               <a href="scala.html"><li class="navitem-mini basic breadcrumb">Scala</li></a>
+               <a href="latex.html"><li class="navitem-mini basic">LaTeX</li></a>
+               <a href="UNIX.html"><li class="navitem-mini basic">UNIX</li></a>
+               <a href="ruby-on-rails.html"><li class="navitem-mini basic">Ruby on Rails</li></a>
+               <a href="probability_theory.html"><li class="navitem-mini basic">Probability</li></a>
+               <a href="bayesian_analysis.html"><li class="navitem-mini basic">Bayesian Stats</li></a>
+            </ul>
+        </div>
+
+        <div class="onecol">
+          <h2><b>Scala</b></h2>
+          
+          <br>
+          <h3> Some Resources: </h3>
+            <li><a href="http://www.amazon.com/Programming-Scala-Comprehensive-Step-Step/dp/0981531644"> Programming In Scala</a>.</li>
+            <li><a href="http://alvinalexander.com/downloads/scala/Scala-Cheat-Sheet-devdaily.pdf" title="scala cheatsheet"> Cheatsheet-1 </a></li>
+            <li> <a href="http://alvinalexander.com/scala/scala-cheat-sheet-reference-examples" title="scala cheatsheet"> More in-depth explanations offered here </a> </li>
+        </div>
+
+        <div class="midwrap light">
+
+         <div class="threecol thick">
+           <h2> The Basics </h2>
+            <h3> Comments </h3>
+            <code>
+              // comment <br>
+              /* <br>
+                Multiline comment <br>
+                */  
+            </code>
+
+            <h3> Defining Variables </h3>
+              <code>
+              var x = 5 // mutable, x=+4 works <br>
+              val x = 5 // evaluated immediately, immutable, x=+4 won't work <br>
+              val s = “foo” // implicit type <br>
+              val i:Int = 1 // explicit type <br>
+              lazy val x = 5 // evaluated once when needed <br>
+               <br>
+              def x = 4 // evaluated when called  
+            </code>
+            
+             <h3> Arithmatic </h3>
+            <code>
+               +, -, *, / <br>
+               // note that if you're dividing numbers of class Int, you'll get 
+               a number of class Int back. <br>
+               // %  the is the remainder operator. <br>
+               5%2 // returns 1 <br>
+               // exponentiation: <br>
+               scala.math.pow(3,4) <br>
+               // etc... for other math operations 
+            </code>
+
+
+
+            <h3> Operator Precedence </h3>
+            - * / & <br>
+            - + - <br>
+            - : <br>
+            - = ! <br>
+            - < > <br>
+            - & <br>
+            - ^ <br>
+            - | <br>
+            - all letters <br>
+            - all assignment operators <br>
+            Booleans evaluate to <code> true </code>, <code> false </code>
+            
+
+
+
+             <h3> If Else </h3> 
+             <code>
+             if(1>2) 4 else 5 <br>
+             val x= if (1==2) 8 else 9 // assigment by if else  
+            </code>
+
+
+             <h3> While Statements </h3> 
+             <code>
+               var total=5 <br>
+               while(total < 17) total+=3 <br>
+               // also valid: <br>
+               do{ <br>
+               &nbsp total+=3 <br>
+               } while (total < 17)  
+            </code>
+
+
+
+
+             <h3> For Loops </h3>
+             "<-" is like the "in" equivalent of the R for loop. <br> 
+             <code>
+               for(i <- 1 to 4) println("hi five") 1 2 3 4 <br>
+               for(i <- 1 until 4) println(i) // 1 2 3 <br>
+               <br>
+             </code>
+             Multidimensional for loops also work. Yay! <br>
+             <code>
+               for(i <- 1 until 3 ; j <- "ab") println(i,j) <br>
+            </code>
+                returns: <br>
+            <code>
+              &nbsp&nbsp  (1,a)<br>
+              &nbsp&nbsp  (1,b)<br>
+              &nbsp&nbsp  (2,a)<br>
+              &nbsp&nbsp  (2,b)<br>
+               <br>
+            </code>
+
+            Note that <code>1 until 3</code> gives you (1, 2); <code>1 to 3</code> gives you (1, 2, 3).
+            <br>
+            <br>
+            Equivalently: <br>
+            <code>
+              val stuff = (1 to 2) flatMap (x => "ab" map (y => (x, y))) <br>
+              for(x <- stuff) println(x) <br>
+            </code>
+                  returns: <br>
+              <code>
+              &nbsp&nbsp  (1,a)<br>
+              &nbsp&nbsp  (1,b)<br>
+              &nbsp&nbsp  (2,a)<br>
+              &nbsp&nbsp  (2,b)<br>
+               <br>
+            </code>
+            <br>
+               Additionally, you can use a collection, e.g. a collection of characters, in the for loop: <br>
+            <code>
+               for(x <- "hello") print(x) <br> 
+                  &nbsp&nbsp hello
+            </code>
+
+
+
+             <h3> Defining Functions </h3>
+             <code>
+               def max(x: Int, y: Int): Int = {  <br>
+               if (x > y) x  <br>
+               &nbsp&nbsp&nbsp else y <br>
+               }  <br>
+                <br>
+              </code>
+                Functions are objects in scala, and as such, can be recursive.
+              <code>
+                <br>
+                def gcd(x: Long, y: Long): Long = <br>
+                 &nbsp&nbsp&nbsp if (y == 0) x else gcd(y, x % y) <br>
+                <br>
+             </code>
+
+                Simpler: <br>
+               <code>
+                def hello: Unit = println(“Hello”) <br> 
+                // or even: <br>
+                def hello = println(“Hello”) <br>
+               </code>
+               <br>
+
+               Note that if there is no <code> = </code> sign preceding the function body definition, the function will return you back a Unit (empty, NULL object):<br> <br>
+               <code>
+                def f(): Unit = "this String gets lost"  <br>
+                def g() { "this String gets lost too" } <br>
+                def h() = { "this String gets returned" } 
+               </code>
+         </div>
+
+
+
+         <div class="threecol thick">
+            <h2> Important Base Scala Classes </h2>
+
+            <h3>Arrays</h3>
+            <code>
+            // creates an empty array (null elements) <br> // of length 3: <br>
+            val a = new Array(3) <br> 
+            // creates a String Array <br>
+            val a = Array("hum", "dee", "dum") <br> </code>
+            <br>
+            Arrays are mutable, indexed collections of values. Although you can't change an array's length, you can change its element values: <br>
+            <br>
+            <code> 
+              a(2) = "whoosh" <br>
+              // or equivalently: <br>
+              a.update(2, "whoosh") <br>
+            </code>
+            <br> 
+            In the example above, <code> a </code> returns <code> Array[String] = Array(hum, dee, whoosh) </code>, so the <code> a </code> array carries elements of class <code> String </code>. You can't insert a non-string into the <code> a </code> array, however you can create a new array containing different types of objects: e.g. <code> val b = Array("one", 2, "!") </code> is allowed, and causes <code> b </code> to return <code> Array[Any] = Array(one, 2, !)</code>.
+
+
+
+            <h3>Lists</h3>
+            Lists are similar to arrays in Scala, but the are immutable, so there is no updating of values. However, you can do things like the following: 
+            <br>
+            <code>
+              val l1 = List(1,"two",3) <br>
+              val l2 = l1.tail <br> // List[Any] = List(two, 3)
+              val l3 = l1.reverse <br> // List[Any] = List(3, two)
+            </code>
+            <br>
+            Concatenating lists is easy: 
+            <br>
+            <code> 
+              val l_cat = l1:::l3 <br>
+              // List[Any] = List(1, two, 3, 3, two, 1) <br>
+              <br>
+              println("l1=" + l1 + "\nl3=" + l3) <br>
+              <br>
+            </code>
+            A similar operator is the "cons" operator, which prepends a new element to the beginning of an existing list, and returns the resulting list.  <br>
+            <code>
+              val conned = l1::l3 <br>
+              // List[Any] = List(List(1, two, 3), 3, two, 1)
+              val conned2 = 1::l2
+              // List[Any] = List(1, two, 3)
+            </code>
+            <br>
+            An empty list can by specified by <code> Nil </code>, and concordantly, another way to initialize a list is the following: <br>
+
+            <code> 
+              val l = 1::2::3::Nil <br>
+              // List[Int] = List(1, 2, 3) <br>
+            </code>
+
+
+
+
+            <h3>Tuples</h3>
+            Like lists, tuples are immutable, but unlike lists, tuples can happily contain different types of elements.
+            <br>
+            <code>
+              val t = (12, "cupcakes") <br>
+              // elements are accessed by ._i, where i is the one-based index number.
+                println(t._1) <br> 
+                println(t._2) <br>
+            </code>
+
+
+
+
+            <h3>Sets</h3>
+             Scala provides mutable and immutable alternatives for sets and maps, but uses the same simple names for both versions. The Scala API contains a base trait for sets (default immutable). Scala then provides two subtraits, one for mutable sets and another for immutable sets. Concrete set classes in the Scala API, such as the HashSet classes, extend either the mutable or immutable Set trait.
+             <br>
+             <code>
+              var s = Set("a", "b") <br>
+              // works because we used var instead of val: <br>
+              s += "c" <br>
+              s += ("a", "a", "d") <br>
+              // s: scala.collection.immutable.Set[String] = <br>
+              // Set(a, b, c, d) <br>
+              println(s.contains("d")) // true <br>
+              <br>
+             </code>
+
+              If <code>s</code> was immutable, you could add elements, but you'd need to assign the output set to a new val name. 
+              <br>
+
+             <code>
+              <br>
+                // to create a mutable set, use <i>import </i>: <br>
+                 import scala.collection.mutable.Set <br>
+                val mut = Set("a", "b") // note the val <br>
+                // mut: scala.collection.mutable.Set[String] = Set(a, b) <br>
+                mut += "c" // works <br>
+            </code>
+
+
+
+          <h3>Maps</h3>
+          Another useful collection class in Scala is Map. As with sets, Scala pro-
+          vides mutable and immutable versions of Map, using a class hierarchy.
+            <br>
+            <br>
+
+            <code>
+            import scala.collection.mutable.Map <br>
+            val treasureMap = Map[Int, String]() <br>
+            treasureMap += (10 -> "Go to island.") <br>
+            treasureMap += (20 -> "Find big X on ground.") <br>
+            treasureMap += (30 -> "Dig.") <br>
+            println(treasureMap(20)) <br>
+
+             <br>
+            // better: <br>
+              val romanNumeral = Map( <br>
+              1 -> "I", 2 -> "II", <br>
+               3 -> "III", 4 -> "IV" <br>
+            ) <br>
+
+        </div>
+
+
+
+         <div class="threecol thick">
+
+
+              <h2> Creating Classes </h2>
+              <h3> Classes </h3>
+              A class is a blueprint for objects. Once you define a class, you can create objects from the class blueprint with the keyword new. For instance: <br> <br>
+              <code>
+                   class Foo { <br>
+                  &nbsp;&nbsp; // class definition goes here, e.g. <br>
+                  &nbsp;&nbsp; var x = 5 <br>
+                  &nbsp;&nbsp; var y = 5 <br>
+                  &nbsp;&nbsp; def add(x: Int, y: Int): Int = { <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;  x + y <br>
+                  &nbsp;&nbsp;} <br>
+                  } <br>
+              </code>
+              <br>
+              To create an instance of the class Foo, you'd type: <br>
+              <br>
+              <code>
+                 val foo = new Foo <br>
+                  foo.x += 3 // adds 3 to the x var in foo <br>
+                  foo.add(foo.x, foo.y) // returns Int = 13 <br>  
+
+              </code>
+              <br>
+              Inside a class definition, you place fields and methods, which are collectively called members. Fields, which you define with either val or var, are variables that refer to objects. Methods, which you define with def, contain executable code (so, litte class-specific functions). The fields hold the state, or data, of an object, whereas the methods use that data to do the computational work of the object. 
+              
+
+              <h3> Singleton Objects </h3>
+               A singleton object definition looks like a class definition, except instead of the keyword class you use the keyword object. 
+               <br>
+               <code> 
+              object Foo { <br>
+                       &nbsp;&nbsp; private val x = 0 <br>
+                       &nbsp;&nbsp; var y = 0 <br>
+                       &nbsp;&nbsp; val s1 = x+y <br>
+                       &nbsp;&nbsp; lazy val s2 = x+y <br>
+                       &nbsp;&nbsp; // lazy := evaluated when called. <br>
+                    } <br>
+                    Foo.y = 100 <br>
+                    println(Foo.s1) // returns 0 <br>
+                    println(Foo.s2) // returns 100 <br>
+                    <br>
+               </code>
+
+               You can bring members of an object into your global environment by using an import statement:<br>
+              <code>
+                import Foo.y <br>
+                println(y) // returns 100 <br>
+              </code>
+              <br>
+              Or, import members from an instance of the class Foo (as opposed to the object Foo) <br>
+              <code>
+                import foo.y <br>
+                println(y) // returns 5
+              </code>
+              <br> <br>
+              When a singleton object shares the same name with a class, it is called that class’s companion object. You must define both the class and its companion object in the same source file. The class is called the companion class of the singleton object. A class and its companion object can access each other’s private members. 
+              <br> <br>
+              Defining a singleton object doesn’t define a type. Given just a definition of object FooBar, you can’t make a variable of type FooBar. Rather, the type named FooBar is defined by the singleton object’s companion class (if it exists). A singleton object that does not share the same name with a companion class is called a standalone object. 
+              <br> <br>
+              Singleton objects can extend a superclass and can mix in traits. Given each singleton object is an instance of its superclasses and mixed-in traits, you can invoke its methods via these types, refer to it from variables of these types, and pass it to methods expecting these types. <br>
+              (Don't worry, I'm confused too...)
+              <br> <br> 
+              One difference between classes and singleton objects is that singleton objects cannot take parameters, whereas classes can. Because you can’t instantiate a singleton object with the new keyword, you have no way to pass parameters to it. 
+              <br> <br>
+
+
+               <h2> Running Scripts </h2>
+                 From the command line, simply enter <br>
+                 <code> scala foobar.scala arg1 arg2 ... </code> <br>
+                 e.g. if the file hello.scala has the code <br>
+                 <code> args.foreach(arg => println(arg)) </code> <br>
+                  in it, then entering <br>
+                 <code> scala hello.scala "yawn" "boo" </code> <br>
+                 into the terminal will give you: <br>
+                 <code>
+                 yawn <br>
+                 boo <br>
+                </code>
+
+         </div>
+       </div>
+     </div>        
+
+</body> </html>
+
+
+

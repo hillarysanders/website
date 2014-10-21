@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title> 
+            Hillary Sanders
+        </title> 
+        <meta name="author" content="Hillary Sanders"> 
+        <meta name="keywords" content="Hillary Sanders Statistics Berkeley Premise Data Scientist Art Bayesian Painting"> 
+        <meta name="description" content="Hillary Sanders: Data Scientist?"> 
+        <meta name="robots" content="index, follow, noarchive"> 
+
+      <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+      <link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+      <style>
+         .midwrap {
+            min-height: 3500px;
+         }
+         .light {
+            min-height: 3125px; /*-375*/
+         }
+      </style> 
+   </head>
+
+   <body>
+      
+      <div class="midwrap">
+         <div class="header codex basic"><h1>hillary sanders</h1></div> 
+
+         <div class="navbox">
+            <ul class="navlist">
+               <a href="index.html"><li class="navitem basic">about hillz</li></a>
+               <a href="drawings.html"><li class="navitem basic">drawings</li></a>
+               <a href="paintings.html"><li class="navitem basic">paintings</li></a>
+               <a href="mixed-media.html"><li class="navitem basic">mixed media</li></a>
+               <a href="cheatsheets.html"><li class="navitem basic breadcrumb">cheatsheets</li></a>
+               <a href="code.html"><li class="navitem basic">code</li></a>
+               <a href="graphs.html"><li class="navitem basic">graphs</li></a>
+               <a href="resume.html"><li class="navitem basic">resume</li></a>
+            </ul>
+         </div>
+
+        <div class="navbox navbox">
+            <ul class="navlist-mini">
+               <a href="emacs.html"><li class="navitem-mini basic">Emacs</li></a>
+               <a href="python.html"><li class="navitem-mini basic">Python</li></a>
+               <a href="scala.html"><li class="navitem-mini basic">Scala</li></a>
+               <a href="latex.html"><li class="navitem-mini basic breadcrumb">LaTeX</li></a>
+               <a href="UNIX.html"><li class="navitem-mini basic">UNIX</li></a>
+               <a href="ruby-on-rails.html"><li class="navitem-mini basic">Ruby on Rails</li></a>
+               <a href="probability_theory.html"><li class="navitem-mini basic">Probability</li></a>
+               <a href="bayesian_analysis.html"><li class="navitem-mini basic">Bayesian Stats</li></a>
+            </ul>
+        </div>
+
+        <div class="onecol">
+          <h2><b>LaTeX</b></h2>
+        </div>
+
+
+         <div class="midwrap light">
+
+         <div class="threecol thick">
+          <h2>Basics</h2>
+            <p> There are two types of text inside <b>LaTeX</b>: math text, and normal text. </br>
+            <b> $ ... $ = math text </br>
+            $$ ... $$ = math text on a centered, new line </br>
+            / = Needed in front of any math symbol. </br> </b>
+            Comments are prefaced with a "<b>%</b>" sign.</br>
+            To create your actual <b>LaTeX</b> document, run </br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;latex name-of-file.tex
+            from the terminal.
+
+              <h2> Example </h2>
+              \documentclass[11pt]{article} </br>
+              \usepackage{amstex} </br>
+              </br>
+              \begin{document} </br>
+              </br>
+              La la la math is so cool.... </br>
+              \textbf{bold!} </br>
+              \textit{talicised!} </br>
+              \texttt{typewriter-text} </br>
+              \size{ <b> where size = tiny, scriptsize, footnotesize, small, normalsize, large, Large, or LARGE, huge, HUGE </b> }
+              </br>
+              (Rest of the paper)</br>
+              </br>
+              \end{document} </br>
+
+            <h2>Document Classes</h2> 
+             <b>LaTeX</b> files begin with a command: \documentclass. </br> For instance, you may have: 
+            <center>\documentclass[11pt]{article}</center> </br>
+            <li><b> article:</b> for articles, the most commonly used class </li>
+            <li><b> report:</b> variant of article for a report</li>
+            <li><b> letter:</b> for letters</li>
+            <li><b> book:</b> for chapters of a book</li>
+            <li><b> proc:</b> for proceedings, based on article</li>
+            <li><b> slides:</b> to produce transparencies</li>
+            </p>
+               
+            <h2> Packages </h2>
+            You may also import packages into <b>LaTeX</b>, generally for extra symbols. For instance, you may have: </br>
+            <center>\documentclass[11pt]{article} </br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\usepackage{amstex, amssymb, amscd}  </center> <br>
+            <b> Common Packages </b>
+            <li><b> amsmath, amsthm:</b> These packages have a lot of standard math symbols. </li>
+            <li><b> amssymb:</b> Additional fonts and symbols. </li>
+            <li><b> amscd:</b> This is a package for typesetting simple commutative diagrams. It's lightweight and easy to use, but it cannot handle diagonal arrows; if you need diagonal arrows, use the xy package described below. </li>
+            <li><b>xy</b>: This package that loads the "xy-pic" program, a general drawing package for TeX that is great for drawing directed graphs and complex commutative diagrams. Very powerful.</li>
+            <li><b> graphicx:</b> The graphicx package allows you to include graphics created by other applications. The graphics files must be in eps (encapsulated postscript) format. </li>
+            <li><b> microtype </b> The microtype package improves the spacing between words and letters. Load this package after any font packages you load, as the package behavior is dependent on this font. Basically, it just makes stuff a tad bit prettier. </li>
+            <li><b>geometry</b> Allows you to alter the margins of your page. </li>
+            
+         </div>
+
+
+
+         <div class="threecol thick">
+          <h2>Formatting</h2>
+
+              <b>  The main way of controlling the format of your document is by using matched pairs of \begin{ } and \end{ } commands. You may declare such an environment in one of the following ways:</b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{itshape} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The polynomial $p(t)$ splits... </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{itshape} </br>
+              or simply: </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\itshape The polynomial $p(t)$ splits ...} </br>
+
+              </br>
+              </br>
+              <b> State a proposition or theorom </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{prop} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the text of my awesome proposition </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{prop} </br>
+              </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\newtheorem{thm}{Theorem} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{thm}[Main Theorem] </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is the main theorem. </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{thm} </br>
+              </br>
+
+              <b> List things (1., 2., 3. ...) </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{enumerate} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\item  $M$ is complete </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\item  $f$ is proper </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{enumerate} </br>
+              </br>
+              <b> Center (or underline) Text </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\begin{center}</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspThis will be centered!</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\end{center}</br>
+              (or <b> underline </b>)</br>
+              </br>
+
+              <b> Spacing </b></br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\vskip100pt</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\newpage</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\newline</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\linebreak</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\\ = new paragraph</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp\\* = new line, but not a new paragraph</br>
+
+              </br>
+              <b> Tables </b> </br>
+              The 8 c's tell <b>LaTeX</b> that the table should have 8 columns, and the entries in each column are to be centered (using l or r makes them left or right justified). The vertical bar characters, |, tell <b>LaTeX</b> to draw vertical lines between the first and second columns, and after the eighth. 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{center}</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{tabular}{c|ccccccc|}</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  $\lambda$& (5)& (4,1)& (3)& (3,1)& (2)& (1)& (1,1)\\</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\hline </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $d_{_\lambda}$& 1& 4& 5& 6& 5& 4& 1\\ </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{tabular}</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{center}</br>
+              </br>
+         </div>
+
+
+
+
+         <div class="threecol thick">
+          <br><br><br><br>
+              <b> Sections </b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\section{Introductory Remarks} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\subsection{ }</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\subsubsection{ }</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\chapter{ } (only in report and book document styles</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\label{ }</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ref{ }</br>
+              <b> e.g.: </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\subsection{Garden Flowers}</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   \label{Tulips}</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;... as we saw in Section \ref{Tulips}, tulips are damned pretty ... </br>
+              </br>
+              <b> Bibliographies </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\begin{thebibliography}{[AHU]} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\bibitem[AHU]{ahu} Aho, A.,\ Hopcroft, J.,\ and </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ullman, J.\ (1976).  {\em{The Design and</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Analysis of Computer Algorithms.}} Addison</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wesley, Reading, Mass.</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\bibitem[AT]{AT} Auslander, L. and Tolmieri, R. </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1979). Is Computing with the Fast Fourier</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transform Pure or Applied Mathematics?</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\em{Bulletin (New Series) of the AMS Vol. 1}} </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;847-897.</br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\end{thebibliography}</br>
+              </br>
+
+              <b> Equations </b>
+              Using the equation environment puts you in math mode, so you don't need to use $ sigs, and creates a numbered, centered equation. </br>
+              </br>
+              <b> Subcripting and Superscripting </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subscript: $\alpha_j$ </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;superscript: $\alpha^j$  </br>  
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;both: $\alpha_j^i$ </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extra-low subscript: $\alpha_{_j}$ (applies lowering operator, "_", twice) </br>
+              </br>
+              <b> Text Inside Math </b> </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$ \{\psi \mid \psi \text{ is an additive character}\} $$.
+              In math mode, <b>LaTeX</b> ignores all spaces. So, it's good to use the following to tell <b>LaTeX</b> to space text-based symbols as text. </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$  X := \operatorname{Spec}A $$
+              
+         </div>
+
+         <div class="onecol">
+          <center><h2>Symbols</h2></center>
+          <center>
+            <div class="halfcol"> 
+              <a><img width=450 src="images/cheatsheet-pics/latex0.jpg" alt="" /></a>
+            </div>
+            <div class="halfcol"> 
+                          <a><img width=450 src="images/cheatsheet-pics/latex1.jpg" alt="" /></a>
+            </div> 
+          </center>
+         </div>
+
+         <div class="onecol">
+          <center>
+            <div class="halfcol"> 
+              <a><img width=450 src="images/cheatsheet-pics/latex2.jpg" alt="" /></a>
+            </div>
+            <div class="halfcol"> 
+                          <a><img width=450 src="images/cheatsheet-pics/latex3.jpg" alt="" /></a>
+            </div> 
+          </center>
+         </div>
+        </div>
+      </div>
+</body> </html>
+
+
+
